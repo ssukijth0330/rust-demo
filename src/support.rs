@@ -4,13 +4,17 @@ pub fn launch_vlc_linux(file: &str){
      //call bash command to launch vlc
         std::process::Command::new("cvlc")
             .arg("--fullscreen")
-            .arg(file)
+            .arg("--play-and-exit") //flag to play and exit
+            .arg("--no-video-title-show") //flag to remove video title
+            .arg("--no-qt-error-dialogs") //flag to remove qt error dialogs
+            .arg("--no-qt-name-in-title") //flag to remove qt name in title
+                .arg(file)
             .spawn()
             .expect("VLC failed to start");
     //Note:
     // Up arrow key increase the volume
     // Down arrow key decrease the volume
-    // Right arrow key forward the video
+    // Right arrow key forward the videogit 
 }
 
 //function to Launch vlc with a file in windows
@@ -26,7 +30,8 @@ pub fn launch_vlc_win(file: &str) {
         .output()
         .expect("failed to execute process");
     //Note:
-    // Up arrow key increase the volume
-    // Down arrow key decrease the volume
-    // Right arrow key forward the video
+    // Up arrow key: increase the volume
+    // Down arrow key: decrease the volume
+    // Right arrow key: skip ahead by 10 seconds
+    // Left arrow key: skip back by 10 seconds
 }
