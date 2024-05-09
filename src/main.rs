@@ -1,16 +1,15 @@
-use std::vec;
-
 
 //include the file common.rs
-mod common;
+//mod common;
 mod support;
 
 fn main() {
+    let args: Vec<String> = std::env::args().collect();
+    let argumet = &args[1];
+    if argumet == "win" {
+        support::launch_vlc_win("bigbuckbunny_480.mp4");
+    } else {
+          support::launch_vlc_linux("/home/ssukijth/dev/hls/bigbuckbunny_480.mp4");
+    }
     //call the function to launch vlc
-    support::launch_vlc("/home/ssukijth/dev/hls/bigbuckbunny_480.mp4");
-}
-
-fn mathmatic(){
-    let minimum = common::find_max(vec![1, 2, 3, 104, 5, 6, 7, 8, 9, 10]);
-    println!("The maximum number is: {}", minimum);
 }
