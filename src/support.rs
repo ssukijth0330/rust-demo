@@ -1,6 +1,6 @@
 //function to launch vlc with the given file
 pub fn launch_vlc(video_file: &str, vlc_path: &str) {
-     println!("Launching VLC with file: {}",video_file);
+     println!("Launching VLC with file: {} {}",vlc_path, video_file);
      //call bash command to launch vlc
         std::process::Command::new(vlc_path)
             .arg("--fullscreen")
