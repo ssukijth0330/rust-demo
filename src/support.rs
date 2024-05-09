@@ -11,14 +11,12 @@ pub fn launch_vlc_linux(file: &str){
     // Up arrow key increase the volume
     // Down arrow key decrease the volume
     // Right arrow key forward the video
-
 }
 
 //function to Launch vlc with a file in windows
 pub fn launch_vlc_win(file: &str) {
-    let cmd = "-no-video-deco";
     //use std::process to launch vlc with flag and a video file
-    let output = std::process::Command::new("C:\\Program Files (x86)\\VideoLAN\\VLC\\vlc.exe") //path to vlc
+    let _output = std::process::Command::new("C:\\Program Files (x86)\\VideoLAN\\VLC\\vlc.exe") //path to vlc
         .arg("--fullscreen") //flag to remove embedded video
         .arg("--play-and-exit") //flag to play and exit
         .arg("--no-video-title-show") //flag to remove video title
