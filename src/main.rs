@@ -24,7 +24,7 @@ fn main() {
         vlc_path = "C:\\Program Files (x86)\\VideoLAN\\VLC\\vlc.exe";
     } else { //if the argument is not equal to WIN, WINDOW, WINDOWS then call the function launch_vlc_linux
         video_file = "/home/ssukijth/dev/hls/bigbuckbunny_480.mp4";
-        vlc_path = "/usr/bin/vlc";
+        vlc_path = "cvlc";
     }
     support::launch_vlc(video_file, vlc_path)
 }
