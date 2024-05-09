@@ -8,14 +8,6 @@ mod support;
 fn main() {
     //call the function to launch vlc
     support::launch_vlc("/home/ssukijth/dev/hls/bigbuckbunny_480.mp4");
-    // sleep for 5 seconds
-    std::thread::sleep(std::time::Duration::from_secs(5));
-    //doing fast forward
-    support::fast_forward();
-    // sleep for 5 seconds
-    std::thread::sleep(std::time::Duration::from_secs(5));
-
-
 }
 
 fn mathmatic(){
